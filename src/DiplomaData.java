@@ -6,6 +6,9 @@ public class DiplomaData {
     public String bil;
     public String category;
     public String name;
+    public int Min = 0;
+    public int Max = 0;
+    public int Total = 0;
     public String year2014, year2015, year2016, year2017, year2018, year2019;
 
     public DiplomaData(String bil, String category, String name, String year2014, String year2015, String year2016,
@@ -38,8 +41,7 @@ public class DiplomaData {
             }
             @Override
             public String toString () {
-                return bil + ". " + " Category = " + category + ", Name = " + name + ", Year 2014 = " + year2014 +
-                        ", Year 2015 = " + year2015 + ", Year 2016 = " + year2016 + ", Year 2017 = " + year2017 + ", " +
-                        "Year 2018 = " + year2018 + ", Year 2019 = " + year2019;
+                return bil + ". " + " Category = " + category + ", Name = " + name + ", Min = " + getMin() + ", Max = " + getMax() +
+                        ", Total = " + getTotal();
             }
 }
