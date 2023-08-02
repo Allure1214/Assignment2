@@ -5,12 +5,8 @@ import java.util.*;
 
 public class Main {
     public static int Total = 0;
-    public static int Year2014 = 0;
-    public static int Year2015 = 0;
-    public static int Year2016 = 0;
-    public static int Year2017 = 0;
-    public static int Year2018 = 0;
-    public static int Year2019 = 0;
+    public static int Min = 0;
+    public static int Max = 0;
 
     public static void main(String[] args) {
         File diploma = new File("diploma.csv");
@@ -50,12 +46,8 @@ public class Main {
                                                         items[5], items[6], items[7], items[8]);
 
                     Total = Total + data.getTotal();
-                    Year2014 = Year2014 + data.getYear2014();
-                    Year2015 = Year2015 + data.getYear2015();
-                    Year2016 = Year2016 + data.getYear2016();
-                    Year2017 = Year2017 + data.getYear2017();
-                    Year2018 = Year2018 + data.getYear2018();
-                    Year2019 = Year2019 + data.getYear2019();
+                    Max = Max + data.getMax();
+                    Min = Min + data.getMin();
 
                     if (" Diploma Lanjutan".equals(items[1])) {
                             diplomaLanjutan.add(data);
@@ -87,8 +79,8 @@ public class Main {
                 }
 
             System.out.println("The sum of intakes from the year 2014 to 2019 is " + Total);
-            System.out.println("The minimum number of intakes between the year 2014 to 2019 is " + Math.min(Math.min(Math.min(Math.min(Math.min(Year2014, Year2015), Year2016), Year2017), Year2018), Year2019));
-            System.out.println("The maximum number of intakes between the year 2014 to 2019 is " + Math.max(Math.max(Math.max(Math.max(Math.max(Year2014, Year2015), Year2016), Year2017), Year2018), Year2019));
+            System.out.println("The minimum number of intakes between the year 2014 to 2019 is " + Min);
+            System.out.println("The maximum number of intakes between the year 2014 to 2019 is " + Max);
 
             }
         catch (FileNotFoundException exception) {

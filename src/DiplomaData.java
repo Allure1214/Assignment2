@@ -6,12 +6,7 @@ public class DiplomaData {
     public String bil;
     public String category;
     public String name;
-    public String year2014;
-    public String year2015;
-    public String year2016;
-    public String year2017;
-    public String year2018;
-    public String year2019;
+    public String year2014, year2015, year2016, year2017, year2018, year2019;
 
     public DiplomaData(String bil, String category, String name, String year2014, String year2015, String year2016,
                        String year2017, String year2018, String year2019) {
@@ -26,30 +21,18 @@ public class DiplomaData {
         this.year2018 = year2018;
         this.year2019 = year2019;
     }
-            public int getYear2014(){
-                return Integer.parseInt(year2014);
-            }
-            public int getYear2015(){
-                return Integer.parseInt(year2015);
-            }
 
-            public int getYear2016(){
-                return Integer.parseInt(year2016);
-            }
+    public int getMin() {
+        return Math.min(Math.min(Math.min(Math.min(Math.min(Integer.parseInt(year2014), Integer.parseInt(year2015)),
+                Integer.parseInt(year2016)), Integer.parseInt(year2017)), Integer.parseInt(year2018)), Integer.parseInt(year2019));
+    }
 
-            public int getYear2017(){
-                return Integer.parseInt(year2017);
-            }
+    public int getMax() {
+        return Math.max(Math.max(Math.max(Math.max(Math.max(Integer.parseInt(year2014), Integer.parseInt(year2015)),
+                        Integer.parseInt(year2016)), Integer.parseInt(year2017)), Integer.parseInt(year2018)), Integer.parseInt(year2019));
+    }
 
-            public int getYear2018(){
-                return Integer.parseInt(year2018);
-            }
-
-            public int getYear2019(){
-                return Integer.parseInt(year2019);
-            }
-
-            public int getTotal () {
+    public int getTotal () {
                 return Integer.parseInt(year2014) + Integer.parseInt(year2015) + Integer.parseInt(year2016) +
                         Integer.parseInt(year2017) + Integer.parseInt(year2018) + Integer.parseInt(year2019);
             }
